@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @entry.product %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @entry.style %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @entry.material %>
+</p>
+
+<p>
+  <strong>Item code:</strong>
+  <%= @entry.item_code %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @entry.stock %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
