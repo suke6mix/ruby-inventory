@@ -8,18 +8,10 @@
             <%# app/assets/images/kasurira_logo.jpg %>
             <%= image_tag "kasurira_logo.jpg", alt: "Kasurira logo" %>
           <% end %>
-          <span class="navbar-burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+
         </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar-end">
-            <span class="navbar-item">
-              <%= link_to "Create new entry", new_entry_path, class: "button is-success" %>
-            </span>
-          </div>
+        <div class="navbar-end">
+          <%= link_to "新規登録", new_entry_path, class: "button is-success" %>
         </div>
       </div>
     </nav>
