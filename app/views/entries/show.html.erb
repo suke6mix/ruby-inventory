@@ -25,8 +25,8 @@
     </nav>
     <div class="colomn is-mobile">
       <div class="colomn">
-        <%= link_to "Edit", edit_entry_path(@entry), class: "button is-gray" %>
-        <%= link_to "Delete", entries_path(@entry), method: :delete, data: { confirm: "本当に消去しますか？"}, class: "button is-gray" %>
+        <%= link_to "変更", edit_entry_path(@entry), class: "button is-gray" %>
+        <%= link_to "削除", entries_path(@entry), method: :delete, data: { confirm: "本当に消去しますか？"}, class: "button is-gray" %>
       </div>
       <div class="column">
         <!-- -->
