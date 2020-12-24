@@ -1,42 +1,45 @@
 <%= form_with(model: entry, local: true) do |form| %>
   <% if entry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
-      <ul>
-        <% entry.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+      </div>
+      <div class="message-body">
+        <ul>
+          <% entry.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :product %>
-    <%= form.text_field :product %>
+    <%= form.label :product, class: "label" %>
+    <%= form.text_field :product, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :style %>
-    <%= form.text_field :style %>
+    <%= form.label :style, class: "label" %>
+    <%= form.text_field :style, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :material %>
-    <%= form.text_field :material %>
+    <%= form.label :material, class: "label" %>
+    <%= form.text_field :material, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :item_code %>
-    <%= form.text_field :item_code %>
+    <%= form.label :item_code, class: "label" %>
+    <%= form.text_field :item_code, class: "input" %>
   </div>
 
   <div class="field">
-    <%= form.label :stock %>
-    <%= form.number_field :stock %>
+    <%= form.label :stock, class: "label" %>
+    <%= form.number_field :stock, class: "input" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success" %>
   </div>
 <% end %>

@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Product:</strong>
+<% content_for :title do %>
   <%= @entry.product %>
-</p>
-
-<p>
-  <strong>Style:</strong>
-  <%= @entry.style %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @entry.material %>
-</p>
-
-<p>
-  <strong>Item code:</strong>
   <%= @entry.item_code %>
-</p>
+  <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
 
-<p>
-  <strong>Stock:</strong>
-  <%= @entry.stock %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="panel is-link">
+      <p class="panel-heading">
+        <%= @entry.product %>
+      </p>
+      <div class="panel-block">
+        タイプ：<%= @entry.style %>
+      </div>
+      <div class="panel-block">
+        生地：<%= @entry.material %>
+      </div>
+      <div class="panel-block">
+        製品コード：<%= @entry.item_code %>
+      </div>
+      <div class="panel-block">
+        在庫数：<%= @entry.stock %>
+      </div> 
+    </nav>
+    <div class="colomn is-mobile">
+      <div class="colomn">
+        <%= link_to "Edit", edit_entry_path(@entry), class: "button is-gray" %>
+        <%= link_to "Delete", entries_path(@entry), method: :delete, data: { confirm: "本当に消去しますか？"}, class: "button is-gray" %>
+      </div>
+      <div class="column">
+        <!-- -->
+      </div>
+    </div>
+  </div>
+</div>

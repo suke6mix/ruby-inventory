@@ -1,35 +1,29 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %>
+  Inventory &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
 
-<h1>Entries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Style</th>
-      <th>Material</th>
-      <th>Item code</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.product %></td>
-        <td><%= entry.style %></td>
-        <td><%= entry.material %></td>
-        <td><%= entry.item_code %></td>
-        <td><%= entry.stock %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Entry', new_entry_path %>
+<div class="columns mt-6 is-centered">
+  <% @entries.each do |entry| %>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title"><%= entry.product %></p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p><span class="has-text-weight-bold">タイプ：<%= entry.style %></span></p>
+            <p><span class="has-text-weight-bold">生地：<%= entry.material %></span></p>
+            <p><span class="has-text-weight-bold">製品コード：<%= entry.item_code %></span></p>
+            <p><span class="has-text-weight-bold">在庫数：<%= entry.stock %></span></p>
+            <p class="italic">登録：<%= time_ago_in_words(entry.created_at) %> 前</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Show', entry, class: "card-footer-item" %>
+          <%= link_to 'Edit', edit_entry_path(entry), class: "card-footer-item" %>
+          <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
