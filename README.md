@@ -1,24 +1,5 @@
-# README
+# ruby-inventory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**このリポジトリは [Code Chrysalis](https://www.codechrysalis.io/)の生徒であるときに作成しました。**
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**This was created during our time as students at [Code Chrysalis](https://www.codechrysalis.io/).**
